@@ -4,10 +4,10 @@ one:
   id: 1
   username: "testUser1"
   email: "testUser1@test.test"
-  password: "testUserOnePassword"
+  password_hash: "testUserOnePassword"
 
 two:
-  id: 1
+  id: 2
   username: "testUser2"
   email: "testUser2@test.test"
-  password: "testUserTwoPassword"
+  password_hash: "testUserTwoPassword"

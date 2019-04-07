@@ -4,17 +4,19 @@ class UsersControllerTest < ActionController::TestCase
     
     fixtures :users
     
-    def test_register
-        mockReq = {username: :one.username, email: :one.email, password: :one.password}
-        
-
+    test "register user" do
+        #Valid request test
+        mockValidReq = {username: "ValidUserRequest" , email: "ValidEmailRequest@test.test", password: "ValidPasswordRequest"}
+        puts mockValidReq
+        #mockMissingEmailParamReq = "{username: \"missingEmailParamUserRequest\" email: \"ValidEmailRequest\", password: \"ValidPasswordRequest\"}"
+        puts json: User.all
+        post :register, params: {body: mockValidReq.to_json}
+        puts json: User.all
+        assert_response :success
+        assert_equal true, User.exists?(username: "ValidUserRequest")
+        #assert_equal "".to_json, @response.body
     end
     
-    private
-    
-    def user_params(mockReq)
-        mockReq.require([:username, :email, :password])
-    end
         
 
   

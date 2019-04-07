@@ -1,4 +1,8 @@
+
+
 class UsersController < ApplicationController
+  include Concerns::Regex
+
   def register
     permitted = user_params
     
@@ -10,6 +14,11 @@ class UsersController < ApplicationController
     #Checks if username is already in db
     if(username_exist(permitted[:username]))
       render json: build_res("Username already in use.", nil)
+      return
+    end
+    #Check if email is in valid format
+    if(!valid_email(permitted[:email]))
+      render json: build_res("Not valid email format.", nil)
       return
     end
     #Checks if emails already in db
@@ -54,8 +63,8 @@ class UsersController < ApplicationController
     def email_exist(email)
       return (User.exists?(email: email))
     end
-      
-      
-      
-  
+    
+    def valid_email(email)
+      return email =~ valid_email_regex
+    end
 end
