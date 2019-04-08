@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  username: "testUser1"
+  email: "testUser1@test.test"
+  password_hash: "testUserOnePassword"
+
+two:
+  id: 2
+  username: "testUser2"
+  email: "testUser2@test.test"
+  password_hash: "testUserTwoPassword"
