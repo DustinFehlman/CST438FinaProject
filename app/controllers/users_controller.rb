@@ -1,16 +1,26 @@
-
-
 class UsersController < ApplicationController
   include Concerns::Regex
 
   def register
+    begin
     permitted = user_params
-    
+
     #Checks to make sure we have all needed params to register
-    if(!has_register_params(permitted))
-      render json: build_res("Missing one or more required params.", nil)
+    if(!has_register_username(permitted))
+      render json: build_res("Missing username param.", nil)
       return
     end
+    
+    if(!has_register_email(permitted))
+      render json: build_res("Missing email param.", nil)
+      return
+    end
+    
+    if(!has_register_password(permitted))
+      render json: build_res("Missing password param.", nil)
+      return
+    end
+    
     #Checks if username is already in db
     if(username_exist(permitted[:username]))
       render json: build_res("Username already in use.", nil)
@@ -27,14 +37,14 @@ class UsersController < ApplicationController
       return
     end
   
-    begin
-      User.create(permitted)
-    rescue StandardError => e
-       render json: build_res("Error creating user: ".concat(e.to_s), nil)
-       return
-    end
+    user = User.new(permitted)
+    user.save
   
     render json: build_res(nil, "success")
+    rescue StandardError => e
+      render json: build_res(e.to_s, nil)
+      return
+    end
   end
   
   private
@@ -48,12 +58,19 @@ class UsersController < ApplicationController
         :data => data ? data: nil
       }
     end
-    
-    def has_register_params(permitted)
-      return permitted.has_key?(:username) &&
-      permitted.has_key?(:email) &&
-      permitted.has_key?(:password)
+  
+    def has_register_username(permitted)
+      return permitted.has_key?(:username)
     end
+    
+    def has_register_email(permitted)
+      return permitted.has_key?(:email)
+    end
+    
+    def has_register_password(permitted)
+      return permitted.has_key?(:password)
+    end
+    
     
     def username_exist(username)
       puts username
