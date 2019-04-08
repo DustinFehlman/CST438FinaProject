@@ -23,19 +23,18 @@ Ruby version - Rails 5.2.3
 
 * Database initialization
 
-<b>Testing</b>
+**Testing**
     -All tesing can be run be using "rails test" command.
 
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
 
-* ...
-
-<b>Endpoints</b>
-    - /register
-        -method: POST
-        -accepts: JSON
-        -request: {"username": "<username>" , "email": "<email>", "password": "<password>"}
-        -response: {"error": "<error>", "data": "<data>" 
-        -This is used to submit user registration to the website
+# Dev Docs
+**Endpoints**
+1. /register 
+   * method: POST  
+   * accepts: JSON  
+   * request:```{"username": "<username>" , "email": "<email>", "password": "<password>"}```
+response:```{"error": "<error>", "data": "<data>"```  
+   * This is used to submit new user registration to the website.
