@@ -36,5 +36,12 @@ Ruby version - Rails 5.2.3
    * method: POST  
    * accepts: JSON  
    * request:```{"username": "<username>" , "email": "<email>", "password": "<password>"}```
-   * response:```{"error": "<error>", "data": "<data>"```  
+   *    response:```{"error": "<error>", "data": "<data>"```  
    * This is used to submit new user registration to the website.
+
+2. /login 
+   * method: POST  
+   * accepts: JSON  
+   * request:```{"username": "<username>" , "password": "<password>"}```
+   *    response:```{"error": "<error>", "data": "<data>"```  
+   * This is used to sign in to the website.
