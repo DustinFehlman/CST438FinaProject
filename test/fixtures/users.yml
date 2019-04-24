@@ -11,3 +11,5 @@ two:
   username: "testUser2"
   email: "testUser2@test.test"
   password_hash: <%= BCrypt::Password.create('testUserTwoPassword') %>
+
+
