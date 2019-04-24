@@ -57,6 +57,13 @@ class SubmitComplaints extends React.Component {
                         required
                     />
                     
+
+                    <form
+                      onChange={this.onChange}
+                      value={this.state.content}
+                      className="textarea"
+                    />
+
                     <br/>
                     
                     <button className="pure-button">

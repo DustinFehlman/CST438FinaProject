@@ -15,9 +15,9 @@ const Main = (props) => {
         <h1>Better Transportation Transparency (B.T.T)</h1>
         
         {/*<Signup/>*/}
-        {/*<Login/>*/}
+        <Login/>
         {/*<CurrentUser/>*/}
-        <SubmitComplaints />
+        {/*<SubmitComplaints/>*/}
 
       </div>
     )

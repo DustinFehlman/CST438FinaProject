@@ -32,6 +32,12 @@ class Login extends React.Component {
         .then((response) => {return response.json()})
         .then(response => console.log('Success:', JSON.stringify(response)))
         .catch(error => console.error('Error:', error));
+        
+        try {
+            this.props.history.push("/#");
+          } catch (e) {
+            alert(e.message);
+          }
     }    
 
     render() {

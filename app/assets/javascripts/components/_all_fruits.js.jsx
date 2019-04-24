@@ -1,3 +1,6 @@
+{/*utilized for testing purposes*/}
+
+
 class AllFruits extends React.Component {
 
     constructor(props) {
