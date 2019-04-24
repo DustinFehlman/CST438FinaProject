@@ -23,27 +23,43 @@ Ruby version - Rails 5.2.3
    * method: POST  
    * accepts: JSON  
    * request:```{"username": "<username>" , "email": "<email>", "password": "<password>"}```
-   * response:```{"error": "<error>", "data": "<data>"```  
+   * response:```{"error": "<error>", "data": "<data>}"```  
    * This is used to submit new user registration to the website.
 
 2. /login 
    * method: POST  
    * accepts: JSON  
    * request:```{"username": "<username>" , "password": "<password>"}```
-   * response:```{"error": "<error>", "data": "<data>"```  
+   * response:```{"error": "<error>", "data": "<data>}"```  
    * This is used to sign in to the website.
    
 3. /getCurrentUser
    * method: GET  
    * accepts: none
    * request: none
-   * response:```{"error": "<error>", "data": "<data>"```  
+   * response:```{"error": "<error>", "data": "<data>}"```  
    * This is used to verfiy currently logged in user.
     
 4. /logout
    * method: GET  
    * accepts: none
    * request: none
-   * response:```{"error": "<error>", "data": "<data>"```  
+   * response:```{"error": "<error>", "data": "<data>"}```  
    * Logs out any logged in user.
+ 
+5. /allComplaints
+   * method: GET  
+   * accepts: none
+   * request: none
+   * response:```{"error": "<error>", "data": "<data>"}```  
+   * Gets all complaints in the database.
+   *
+6. /submitComplaint 
+   * method: POST  
+   * accepts: JSON  
+   * request:```{"username": "<username>" , "text": "<text>"}```
+   * response:```{"error": "<error>", "data": "<data>}"```  
+   * This is to submit complaints. User must be authed to work.
+   
+    
     

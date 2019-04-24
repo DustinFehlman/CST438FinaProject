@@ -5,4 +5,6 @@ Rails.application.routes.draw do
     post   '/login', to: 'sessions#login'
     delete '/logout', to: 'sessions#logout'
     get '/getCurrentUser', to: 'sessions#getCurrentUser'
+    get '/allComplaints', to: 'complaints#allComplaints'
+    post '/submitComplaint', to: 'complaints#submitComplaint'
 end

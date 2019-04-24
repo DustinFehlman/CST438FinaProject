@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-   include Concerns::Sessions
+  include Concerns::Sessions
    
   def login
     user = User.where(username: params[:username]).first
