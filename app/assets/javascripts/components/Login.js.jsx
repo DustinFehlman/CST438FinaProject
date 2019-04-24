@@ -19,7 +19,7 @@ class Login extends React.Component {
     onSubmit(e){
         e.preventDefault();
         // console.log(this.state)
-        fetch('/login', {
+        fetch('/register', {
             method: 'POST',
             body: JSON.stringify({
                 username:this.state.username, 
