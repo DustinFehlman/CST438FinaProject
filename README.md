@@ -46,4 +46,12 @@ Ruby version - Rails 5.2.3
    * request: none
    * response:```{"error": "<error>", "data": "<data>"```  
    * Logs out any logged in user.
+ 
+5. /allComplaints
+   * method: GET  
+   * accepts: none
+   * request: none
+   * response:```{"error": "<error>", "data": "<data>"```  
+   * Gets all complaints in the database.
+    
     
