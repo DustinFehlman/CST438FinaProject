@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     delete '/logout', to: 'sessions#logout'
     get '/getCurrentUser', to: 'sessions#getCurrentUser'
     get '/allComplaints', to: 'complaints#allComplaints'
-    post '/submitComplaint' to 'complaints#submitComplaint'
+    post '/submitComplaint', to: 'complaints#submitComplaint'
 end

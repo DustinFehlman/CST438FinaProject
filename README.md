@@ -53,5 +53,13 @@ Ruby version - Rails 5.2.3
    * request: none
    * response:```{"error": "<error>", "data": "<data>"}```  
    * Gets all complaints in the database.
+   *
+6. /submitComplaint 
+   * method: POST  
+   * accepts: JSON  
+   * request:```{"username": "<username>" , "text": "<text>"}```
+   * response:```{"error": "<error>", "data": "<data>}"```  
+   * This is to submit complaints. User must be authed to work.
+   
     
     
