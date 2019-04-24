@@ -19,7 +19,7 @@ class ComplaintsController < ApplicationController
                 return
             end
             if(!session[:id])
-                render json: build_res("No user logged in. Uable to submit", nil)
+                render json: build_res("No user logged in. Unable to submit", nil)
                 return
             end
             

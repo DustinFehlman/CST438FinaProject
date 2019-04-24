@@ -2,7 +2,7 @@ class CurrentUser extends React.Component {
 
     constructor(props) {
         super(props);
-        username: null;
+        username: '';
     }
 
     componentDidMount() {
@@ -15,6 +15,7 @@ class CurrentUser extends React.Component {
                 }) 
                 
             });
+            console.log(this.state.username)
     }
 
     render() {
