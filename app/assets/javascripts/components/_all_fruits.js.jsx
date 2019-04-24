@@ -27,18 +27,15 @@ class AllFruits extends React.Component {
         return(
             <div>
                 <div>
-                <p>username:</p>
-                {this.state.username}
+                <p>username: {this.state.username}</p>
                 </div>
                 
                 <div>
-                <p>email:</p>
-                {this.state.email}
+                <p>email: {this.state.email}</p>
                 </div>
                 
                 <div>
-                <p>password:</p>
-                {this.state.password}
+                <p>password: {this.state.password}</p>
                 </div>
             </div>
         )

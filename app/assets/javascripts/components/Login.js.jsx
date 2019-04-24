@@ -1,11 +1,10 @@
 class Login extends React.Component {
-
+    
     constructor(props) {
         super(props);
         
         this.state = {
                 username: "",
-                email: "",
                 password: ""
         };
         
@@ -16,15 +15,14 @@ class Login extends React.Component {
     onChange(e){
         this.setState({ [e.target.name]: e.target.value});
     }
-        
+    
     onSubmit(e){
         e.preventDefault();
         // console.log(this.state)
-        fetch('.../register', {
+        fetch('/login', {
             method: 'POST',
             body: JSON.stringify({
                 username:this.state.username, 
-                email:this.state.email,
                 password: this.state.password
             }),
             headers:{
@@ -35,66 +33,42 @@ class Login extends React.Component {
         .then(response => console.log('Success:', JSON.stringify(response)))
         .catch(error => console.error('Error:', error));
         console.log(this.state);
-    }
+        <CurrentUser/>
+    }    
 
     render() {
         return(
-            <form onSubmit={this.onSubmit}>
-                <h2>Join our community!</h2>
-                
-                
-                <div className="form-group">
-                    <label className="control-label">Username</label>
-                    <input
+            <form className="pure-form pure-form-stacked" onSubmit={this.onSubmit}>
+                <h2>Login</h2>
+                    <label>Username</label>
+                    <span htmlFor="pure-form-message"/>
+                    <input 
                         value={this.state.username}
                         onChange={this.onChange}
-                        type="text"
                         name="username"
-                        className="form-control"
-                    />
-                    
-                    <br/>
-                    <br/>
-                    
-                    <label className="control-label">Email</label>
-                    <input
-                        value={this.state.email}
-                        onChange={this.onChange}
                         type="text"
-                        name="email"
-                        className="form-control"
+                        required
                     />
                     
+    
                     <br/>
-                    <br/>
-                    
-                    <label className="control-label">Password</label>
-                    <input
+    
+                    <label>Password</label>
+                    <span htmlFor="pure-form-message"/>
+                    <input 
                         value={this.state.password}
                         onChange={this.onChange}
-                        type="password"
                         name="password"
-                        className="form-control"
+                        type="password"
+                        required
                     />
                     
                     <br/>
-                    <br/>
                     
-                    <div className="form-group">
-                        <button className="btn btn-primary btn-lg">
-                        Sign Up
-                        </button>
-                    </div>
-                    
-                    <div className="form-group">
-                        <button className="btn btn-primary btn-lg">
-                        Sign Up
-                        </button>
-                    </div>
-                    
-                </div>
+                    <button className="pure-button">
+                        Login
+                    </button>
             </form>
-                );
+            );
     }
-
 }

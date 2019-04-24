@@ -20,7 +20,7 @@ class Signup extends React.Component {
     onSubmit(e){
         e.preventDefault();
         // console.log(this.state)
-        fetch('.../register', {
+        fetch('/register', {
             method: 'POST',
             body: JSON.stringify({
                 username:this.state.username, 
@@ -34,62 +34,59 @@ class Signup extends React.Component {
         .then((response) => {return response.json()})
         .then(response => console.log('Success:', JSON.stringify(response)))
         .catch(error => console.error('Error:', error));
-        console.log(this.state);
+        // console.log(this.state);
     }
 
     render() {
         return(
-            <form onSubmit={this.onSubmit}>
+            <form className="pure-form pure-form-stacked" onSubmit={this.onSubmit}>
                 <h2>Join our community!</h2>
-                
-                
                 <div className="form-group">
                     <label className="control-label">Username</label>
+                    <span htmlFor="pure-form-message">This is a required field.</span>
                     <input
                         value={this.state.username}
                         onChange={this.onChange}
                         type="text"
                         name="username"
                         className="form-control"
+                        required
                     />
                     
                     <br/>
-                    <br/>
                     
                     <label className="control-label">Email</label>
+                    <span htmlFor="pure-form-message">This is a required field.</span>
                     <input
                         value={this.state.email}
                         onChange={this.onChange}
                         type="text"
                         name="email"
                         className="form-control"
+                        required
                     />
                     
                     <br/>
-                    <br/>
                     
                     <label className="control-label">Password</label>
+                    <span htmlFor="pure-form-message">This is a required field.</span>
                     <input
                         value={this.state.password}
                         onChange={this.onChange}
                         type="password"
                         name="password"
                         className="form-control"
+                        required
                     />
                     
                     <br/>
-                    <br/>
                     
                     <div className="form-group">
-                        <button className="btn btn-primary btn-lg">
-                        Sign Up
-                        </button>
-                    </div>
-                    
-                    <div className="form-group">
-                        <button className="btn btn-primary btn-lg">
-                        Sign Up
-                        </button>
+                        <button 
+                            type="submit" 
+                            htmlFor="pure-button pure-button-primary">
+                            Sign in
+                            </button>
                     </div>
                     
                 </div>
