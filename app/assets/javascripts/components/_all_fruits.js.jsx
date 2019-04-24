@@ -10,17 +10,7 @@ class AllFruits extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/register')
-            .then((response) => { return response.json() })
-            .then((json) => { 
-                // console.log(json);
-                this.setState({ 
-                    username: json.username,
-                    email: json.email,
-                    password: json.password
-                }) 
-                
-            });
+    
     }
 
     render() {

@@ -20,7 +20,7 @@ class Signup extends React.Component {
     onSubmit(e){
         e.preventDefault();
         // console.log(this.state)
-        fetch('.../register', {
+        fetch('/register', {
             method: 'POST',
             body: JSON.stringify({
                 username:this.state.username, 
