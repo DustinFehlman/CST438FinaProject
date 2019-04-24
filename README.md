@@ -8,8 +8,14 @@
 
 **System dependencies**
 
-Ruby version - Rails 5.2.3
-
+-Ruby version - Rails 5.2.3
+-Postgress
+    -Must install and start postgress in dev environment with:
+        ```sudo yum install postgresql-server```
+        ```sudo -u postgres createuser -s ec2-user```
+        ```sudo -u postgres createdb ec2-user```
+        ```sudo service postgresql start```
+        
 **Testing**
     -All tesing can be run be using "rails test" command.
 
