@@ -13,3 +13,70 @@
  *= require_tree .
  *= require_self
  */
+ 
+
+div {
+    padding: 20px;
+    margin: center;
+    color: blue;
+}
+
+nav{
+  display: inline;
+  background-color: black;
+}
+
+body {
+  background-color: white;
+}
+form{
+  color: LightYellow;
+  background-color: Crimson;
+  padding: 20px;
+}
+
+h1{
+  color: darkSlateGray ;
+  font-size: 35px;
+}
+h2{
+  font-size:29px;
+}
+label{
+  padding: 10px;
+}
+input {
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid snow;
+  border-radius: 4px;
+  background-color: snow;
+}
+
+
+button {
+  background-color: white;
+  font-size:20px;
+  padding:5px;
+}
+
+
+/*.textColor {*/
+/*    color: Crimson;*/
+/*    background-color: white;*/
+/*}*/
+/*.borderColor {*/
+/*    border-width: 3px;*/
+/*    border-style: solid;*/
+/*    border-color: Crimson;*/
+/*}*/
+/*.backgroundColor {*/
+/*    background-color: Crimson;*/
+/*    color: white;*/
+/*}*/
+/*.backgroundGradient {*/
+/*    background: linear-gradient(to bottom, white, Crimson);*/
+/*    color: white;*/
+/*}*/
