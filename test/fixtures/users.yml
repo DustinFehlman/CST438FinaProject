@@ -4,10 +4,12 @@ one:
   id: 1
   username: "testUser1"
   email: "testUser1@test.test"
-  password_hash: "testUserOnePassword"
+  password_hash: <%= BCrypt::Password.create('testUserOnePassword') %>
 
 two:
   id: 2
   username: "testUser2"
   email: "testUser2@test.test"
-  password_hash: "testUserTwoPassword"
+  password_hash: <%= BCrypt::Password.create('testUserTwoPassword') %>
+
+
