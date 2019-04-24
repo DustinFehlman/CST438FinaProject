@@ -3,5 +3,6 @@ Rails.application.routes.draw do
     root to: 'home#index'
     post '/register', to: 'users#register'
     post   '/login', to: 'sessions#login'
-    delete '/logout', to: 'sessions#destroy'
+    delete '/logout', to: 'sessions#logout'
+    get '/getCurrentUser', to: 'sessions#getCurrentUser'
 end

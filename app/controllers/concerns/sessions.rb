@@ -6,7 +6,7 @@ module Concerns::Sessions
   
   def current_user
     if session[:id]
-      @current_user ||= User.find_by(id: session[:id])
+      @current_user ||= User.where(id: session[:id]).first
     end
   end
   
